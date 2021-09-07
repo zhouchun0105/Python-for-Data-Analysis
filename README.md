@@ -14,4 +14,7 @@ A function can return multiple values by returning a tuple. You can access tuple
 
 **Global**: modify the variable outside of the current scope. It is used to create a global variable and make changes to the variable in a local context.
 
+**nonlocal** used in inner functions to state the value of variable is applicable to outer function.
+
+The searching order is: local scope, enclosing functions, global, builtins.
 
