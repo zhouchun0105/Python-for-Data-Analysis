@@ -12,4 +12,6 @@ A function can return multiple values by returning a tuple. You can access tuple
 * Local scope: defined inside the function
 * Built-in scope: names in the pre-defined built-ins module
 
+**Global**: modify the variable outside of the current scope. It is used to create a global variable and make changes to the variable in a local context.
+
 
