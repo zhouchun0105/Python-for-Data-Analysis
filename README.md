@@ -5,3 +5,5 @@
 **Signiture of a function**: the function header and its parameters.
 
 A function can return multiple values by returning a tuple. You can access tuple by index.
+
+**Scope**: part of the program where an object or name may be accessible.
