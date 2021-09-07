@@ -48,10 +48,32 @@ def change_team():
     team = 'justice league'
 print(team)
 
+# Nested Functions
+def three_shouts(word1, word2, word3):
+    """Returns a tuple of strings
+    concatenated with '!!!'."""
+    
+    def inner(word):
+        """Returns a string concatenated with '!!!'."""
+        return word + '!!!'
+    return (inner(word1), inner(word2), inner(word3))
 
+print(three_shouts('a', 'b', 'c'))
 
+# Another great nested functions
+def echo(n):
+    """Return the inner_echo function."""
+    def inner_echo(word1):
+        """Concatenate n copies of word1."""
+        echo_word = word1 * n
+        return echo_word
+    return inner_echo
 
+twice = echo(2)
 
+thrice = echo(3)
+
+print(twice('hello'), thrice('hello'))
 
 
 
