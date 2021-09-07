@@ -40,7 +40,13 @@ for entry in col:
         langs_count[entry] = 1
 print(langs_count)
 
-
+# Global a variable
+team = "teen titans"
+def change_team():
+    """Change the value of the global variable team."""
+    global team
+    team = 'justice league'
+print(team)
 
 
 
