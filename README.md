@@ -18,5 +18,6 @@ A function can return multiple values by returning a tuple. You can access tuple
 
 The searching order is: local scope, enclosing functions, global, builtins.
 
-'*args' for arbitrary number of parameters
+func(*args) for arbitrary number of numerical parameters
+func(**kwargs) for keyword pairs
 
