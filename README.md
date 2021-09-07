@@ -4,4 +4,4 @@
 
 **Signiture of a function**: the function header and its parameters.
 
-A function can return multiple values by returning a tuple.
+A function can return multiple values by returning a tuple. You can access tuple by index.
