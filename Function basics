@@ -91,4 +91,18 @@ one_word = gibberish('luke')
 many_words = gibberish("luke", "leia", "han", "obi", "darth")
 
 
+#kwargs example
+def report_status(**kwargs):
+    """Print out the status of a movie character."""
+    print("\nBEGIN: REPORT\n")
+
+    for key, value in kwargs.items():
+        print( key + ": " + value)
+    print("\nEND REPORT")
+
+report_status(name='luke',affiliation='jedi',status='missing')
+
+report_status(name='anakin', affiliation='sith lord', status='deceased')
+
+
 
