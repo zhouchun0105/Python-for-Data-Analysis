@@ -76,7 +76,19 @@ thrice = echo(3)
 print(twice('hello'), thrice('hello'))
 
 
+# Arbitrary number of string inputs
+def gibberish(*args):
+    """Concatenate strings in *args together."""
 
+    hodgepodge = ''
+
+    for word in args:
+        hodgepodge += word
+
+    return hodgepodge
+
+one_word = gibberish('luke')
+many_words = gibberish("luke", "leia", "han", "obi", "darth")
 
 
 
