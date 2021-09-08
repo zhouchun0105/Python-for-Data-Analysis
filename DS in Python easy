@@ -1,0 +1,38 @@
+# Packages introduced: 
+# statsmodels, sm, used in machine learning
+# seaborn, sns, visualization
+
+# Positional arguments tell the function how to do its job
+# Keyword arguments come after positional arguments
+
+# import dataset
+import pandas as pd
+r = pd.read_csv('ransom.csv')
+
+# Two ways to select columns 
+df['column_name']
+df.column_name
+
+# Select rows with certain conditions
+df[df.column_name > 5]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
