@@ -1,0 +1,51 @@
+# Merge only returns rows where the values match in both tables
+# One to many relationships also use merge
+taxi_own_veh = taxi_owners.merge(taxi_veh, on='vid')
+
+# Count the number of different fuel_type
+taxi_own_veh['fuel_type'].value_counts()
+
+# Groupby
+counted_df = licenses_owners.groupby("title").agg({'account':'count'})
+
+# Sort values
+sorted_df = counted_df.sort_values(by='account', ascending=False)
+
+# Multiple merges
+ridership_cal_stations = ridership.merge(cal, on=['year','month','day']) \
+            				.merge(stations, on="station_id")
+                    
+# Filter
+filter_criteria = ((ridership_cal_stations['month'] == 7) 
+                   & (ridership_cal_stations['day_type'] == "Weekday") 
+                   & (ridership_cal_stations['station_name'] == "Wilson"))
+              
+# Calculate sum of the column satisfying filter criteria
+ridership_cal_stations.loc[filter_criteria, 'rides'].sum()
+
+# Suffixes for the table on the left and right
+land_cen_lic = land_use.merge(census, on = "ward") \
+.merge(licenses, on = "ward", suffixes = ["_cen", "_lic"])
+
+# Left join
+movies_financials = movies.merge(financials, on='id', how='left')
+
+# Count the number of rows in the budget column that are missing
+number_of_missing_fin = movies_financials['budget'].isnull().sum()
+
+# From action_scifi, select only the rows where the genre_act column is null
+scifi_only = action_scifi[action_scifi['genre_act'].isnull()]
+
+# Merge the movies and scifi_only tables with an inner join
+movies_and_scifi_only = movies.merge(scifi_only, how='inner',
+                                     left_on='id', right_on='movie_id')
+
+genre_count = genres_movies.groupby('genre').agg({'id':'count'})
+
+genre_count.plot(kind='bar')
+plt.show()
+
+
+
+
+
